@@ -52,12 +52,12 @@ export class ChatModal extends Modal {
   async onOpen() {
     const container = this.contentEl;
     container.addClass("chatModal");
-    container.createEl("h1", { text: "Ollama AI Chat" });
+    container.createEl("h1", { text: "Indexed Ollama AI Chat" });
     const wrapper = container.createDiv({ cls: "chatModal__wrapper"});
     this.responseContainer = wrapper.createDiv();
 
     const inputContainer = wrapper.createEl('div');
-    this.input = inputContainer.createEl('input', { placeholder: 'Your question my Lord?' });
+    this.input = inputContainer.createEl('input', { placeholder: 'User input' });
     this.input.addEventListener("keypress", (e) => { e.key === "Enter" && this.onClickHandler() });
 
     const button = inputContainer.createEl('button', { text: 'Submit' });
